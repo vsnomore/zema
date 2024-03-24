@@ -1,0 +1,62 @@
+.header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+
+    &__logo {
+        display: block;
+        width: 207px;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    &__navigation {
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+
+            a {
+                font-weight: 600;
+                font-size: 18px;
+                color: #fff;
+            }
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__number {
+        font-weight: 500;
+        font-size: 22px;
+        background: linear-gradient(90deg, #eb8300 0%, rgba(235, 202, 0, 0.38) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &__wa {
+        height: 32px;
+        width: 32px;
+
+        svg {
+            height: 32px;
+            width: 32px;
+        }
+    }
+}

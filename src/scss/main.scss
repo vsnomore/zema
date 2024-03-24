@@ -1,0 +1,25 @@
+@import './base/normalize';
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background: #121110;
+}
+
+.container {
+    width: 1152px;
+    margin: 0 auto;
+}
+
+@import './blocks/info';
+@import './blocks/header';
+@import './blocks/promo';
+@import './blocks/delivery';
+@import './blocks/marketplaces';
+@import './blocks/why';
+@import './blocks/buyer';
+@import './blocks/faq';
+@import './blocks/footer';
+

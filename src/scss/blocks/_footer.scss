@@ -1,0 +1,195 @@
+.footer {
+
+    .container {
+        position: relative;
+    }
+
+    &__tie {
+        position: absolute;
+        right: -110px;
+        top: 36px;
+        height: 113px;
+        width: 172px;
+        z-index: -1;
+    }
+
+    &__first {
+        padding: 64px 0;
+        display: grid;
+        grid-template-columns: 723px 1fr;
+        gap: 64px;
+    }
+
+    &__map {
+        width: 100%;
+        height: 600px;
+        position: relative;
+
+        iframe {
+            border: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+        }
+
+        &-wrapper {
+            position: absolute;
+            background-color: #EBCA00;
+            bottom: 16px;
+            left: 16px;
+            width: 691px;
+            border-radius: 8px;
+        }
+
+        &-text {
+            padding: 8px 16px;
+            position: relative;
+
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: url('./assets/img/pattern1.png') repeat;
+                opacity: 0.08;
+            }
+        }
+
+        &-address {
+            width: 370px;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 21px;
+            color: #000;
+        }
+
+        &-descr {
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16px;
+            color: #3A3636;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__category {
+
+        &-title {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 24px;
+            color: #fff;
+        }
+
+        &-list,
+        .footer__contacts {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        &-link {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 16px;
+            color: #E3E3E3;
+        }
+
+
+    }
+
+    &__contacts {
+
+        &-address,
+        &-time,
+        &-email {
+            width: 286px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #E3E3E3;
+            line-height: 16px;
+        }
+
+        &-phone {
+            background: linear-gradient(90.00deg, rgb(235, 202, 0), rgba(235, 202, 0, 0.38));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16px;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        gap: 24px;
+
+        svg {
+            width: 36px;
+            height: 36px;
+        }
+    }
+
+
+    &__second {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url('./assets/img/pattern2.png') repeat;
+            z-index: -1;
+        }
+
+        &-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__logo {
+        display: block;
+        width: 217px;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    span {
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 26px;
+        color: #fff;
+    }
+
+    &__rights {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 23px;
+        color: #fff;
+    }
+}

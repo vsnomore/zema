@@ -1,0 +1,78 @@
+.delivery {
+    background-color: #fff;
+    padding: 64px 0;
+    position: relative;
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: url('./assets/img/pattern2.png') repeat;
+        opacity: 0.06;
+    }
+
+    .container {
+        position: relative;
+    }
+
+    svg {
+        position: absolute;
+        right: -110px;
+        top: -36px;
+        height: 113px;
+        width: 172px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 48px;
+        color: #000;
+        letter-spacing: -2%;
+    }
+
+    &__subtitle {
+        margin-top: 16px;
+        font-weight: 400;
+        font-size: 16px;
+        color: #362a2a;
+    }
+
+    &__grid {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+
+        &-item {
+            height: 120px;
+            padding: 16px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 20px;
+            color: #ebca00;
+            letter-spacing: -2%;
+
+            &:nth-child(1) {
+                background: linear-gradient(0.00deg, rgba(0, 0, 0, 0) -10%, rgb(0, 0, 0) 113.75%), center / cover no-repeat url('./assets/img/autodelivery.jpg');
+            }
+
+            &:nth-child(2) {
+                background: linear-gradient(0.00deg, rgba(0, 0, 0, 0) -10%, rgb(0, 0, 0) 113.75%), center / cover no-repeat url('./assets/img/aviadelivery.jpg');
+            }
+
+            &:nth-child(3) {
+                background: linear-gradient(0.00deg, rgba(0, 0, 0, 0) -10%, rgb(0, 0, 0) 113.75%), center / cover no-repeat url('./assets/img/traindelivery.jpg');
+            }
+
+            &:nth-child(4) {
+                background: linear-gradient(0.00deg, rgba(0, 0, 0, 0) -10%, rgb(0, 0, 0) 113.75%), center / cover no-repeat url('./assets/img/shipdelivery.jpg');
+            }
+        }
+    }
+
+
+}

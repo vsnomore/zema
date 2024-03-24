@@ -1,0 +1,183 @@
+.buyer {
+    padding: 137px 0 88px 0;
+    position: relative;
+    
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: url('./assets/img/pattern3.png') repeat;
+        opacity: 0.08;
+        z-index: -30;
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 60%;
+        height: 100%;
+        background: url('./assets/img/collage.png') center / cover no-repeat;
+        // opacity: 0.08;
+        z-index: -20;
+    }
+
+    &__form {
+        width: 648px;
+        padding: 24px;
+        border-radius: 8px;
+        box-shadow: 5px 6px 36px 0px rgba(255, 255, 255, 0.25);
+        background: rgba(18, 17, 16, 0.96);
+        position: relative;
+        z-index: 1;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url('./assets/img/pattern2.png') repeat;
+            z-index: -10;
+        }
+
+        &-title {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 58px;
+            letter-spacing: -2%;
+            color: #fff;
+        }
+
+        &-subtitle {
+            margin-top: 16px;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 28px;
+            color: #E3E3E3;
+        }
+
+        &-text {
+            margin-top: 16px;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 23px;
+            color: #E3E3E3;
+        }
+
+        form {
+            margin-top: 32px;
+        }
+
+        &-field {
+            display: flex;
+            flex-direction: column;
+
+            &:last-of-type {
+                margin-top: 32px;
+            }
+
+            span {
+                font-size: 22px;
+                font-weight: 500;
+                line-height: 26px;
+                color: #fff;
+            }
+
+            input {
+                border: 0;
+                border-bottom: 1px solid #fff;
+                height: 52px;
+                width: 100%;
+                background: none;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 19px;
+                color: #E3E3E3;
+
+                &:active,
+                &:focus {
+                    background: none;
+                    outline: none;
+                    border-bottom: 1px solid #EBCA00;
+                }
+            }
+        }
+
+        &-checkboxes {
+            margin-top: 24px;
+            display: flex;
+            gap: 24px;
+
+            label {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 26px;
+                color: #E3E3E3;
+            }
+        }
+
+        input[type="checkbox"] {
+            position: relative;
+            width: 24px;
+            height: 24px;
+            color: #E3E3E3;
+            background: #fff;
+            border: 1.68px solid rgb(227, 227, 227);
+            border-radius: 2.24px;
+            appearance: none;
+            outline: 0;
+            cursor: pointer;
+            transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+
+            &::before {
+                position: absolute;
+                content: '';
+                display: block;
+                background: url('./assets/icons/checkmark.svg') center / contain no-repeat;
+                width: 16px;
+                height: 16px;
+                left: 2.5px;
+                top: 2px;
+                opacity: 0;
+            }
+
+            &:checked {
+                color: #fff;
+                border-radius: 1.12px;
+                border-color: rgb(235, 202, 0);
+                background: rgb(235, 202, 0);
+
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &-button {
+            margin-top: 24px;
+            height: 64px;
+            width: 100%;
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 26px;
+            text-align: center;
+            color: #000;
+            border-radius: 8px;
+            background: rgb(235, 202, 0);
+            cursor: pointer;
+        }
+    }
+}
