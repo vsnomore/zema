@@ -63,4 +63,61 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     
     }
+
+    // MODALS
+    const overlay = document.querySelector('.overlay');
+    const closeButtons = document.querySelectorAll('.modal__close-icon');
+    const buttons = document.querySelectorAll("*[data-modal='*']");
+    const infoBtn = document.querySelector('.info__btn');
+    const promoBtn = document.querySelector('.promo__btn');
+    const priceCatalog = document.getElementById('price-catalog');
+
+    buttons.forEach(function (item) {
+        if (item.hasAttribute('data-modal')) {
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+                const attr = this.getAttribute('data-modal'),
+                    modalWindow = document.getElementById(`${attr}`);
+
+                modalWindow.classList.add('show');
+                overlay.classList.add('show');
+                document.body.style.overflow = 'hidden';
+                document.body.style.paddingRight = '12px';
+            });
+        }
+    });
+
+    infoBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        priceCatalog.classList.add('show');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        document.body.style.paddingRight = '12px';
+    });
+
+    promoBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        priceCatalog.classList.add('show');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        document.body.style.paddingRight = '12px';
+    });
+
+    closeButtons.forEach(function (item) {
+        item.addEventListener('click', function () {
+            const modal = this.closest('.modal');
+
+            modal.classList.remove('show');
+            overlay.classList.remove('show');
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
+        });
+    });
+
+    overlay.addEventListener('click', function () {
+        document.querySelector('.modal.show').classList.remove('show');
+        this.classList.remove('show');
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+    });
 });
