@@ -23,6 +23,15 @@
         position: relative;
     }
 
+    &__circle {
+        position: absolute;
+        left: -741px;
+        bottom: -260px;
+        height: 683px;
+        width: 683px;
+        z-index: -1;
+    }
+
     &__ornament {
         width: 285px;
         height: 30px;
@@ -37,9 +46,107 @@
 
     &__subtitle {
         margin-top: 16px;
+        margin-bottom: 32px;
         font-size: 18px;
         font-weight: 500;
         line-height: 21px;
         color: #362A2A;
     }
+
+    &-list {
+
+        &__item {
+            margin-top: 12px;
+
+            &-title {
+                font-size: 28px;
+                font-weight: 400;
+                line-height: 32px;
+                color: #362A2A;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                    transition: .3s;
+                }
+            }
+
+            &-toggler {
+                width: 48px;
+                height: 48px;
+            }
+
+            &:hover .faq-list__item-toggler svg {
+                transform: rotate(45deg);
+            }
+
+            &-active {
+                .faq-list__item-toggler {
+                    position: relative;
+
+                    &:before,
+                    &:after {
+                        display: block;
+                        content: "";
+                        position: absolute;
+                        width: 50px;
+                        height: 2px;
+                        top: 20px;
+                        right: 0;
+                        background-color: #362A2A;
+                    }
+
+                    &:before {
+                        transform: rotate(45deg);
+                    }
+
+                    &::after {
+                        transform: rotate(-45deg);
+                    }
+                }
+
+                .faq-list__item-toggler svg {
+                    display: none;
+                }
+
+                // span {
+                //     color: #EBCA00;
+                // }
+            }
+
+            &-content {
+                height: 0;
+                overflow: hidden;
+                transition: .7s;
+            }
+
+            .faq-list__item-content.content-active {
+                transition: .7s;
+            }
+
+            .faq-list__item-content.content-active+.services-list__item-divider {
+                margin-top: 20px;
+            }
+
+            &-description {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16px;
+                color: #362A2A;
+            }
+
+            &-divider {
+                display: block;
+                width: 100%;
+                background-color: #362A2A;
+                height: 1px;
+                margin-top: 12px;
+            }
+        }
+    }
+
 }

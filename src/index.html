@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,19 +22,20 @@
             </div>
         </div>
     </section>
+
     <header class="header">
         <div class="container">
             <div class="header__wrapper">
-                <div class="header__logo">
+                <a href="index.html" class="header__logo">
                     <img src="./assets/icons/zema.svg" alt="logo">
-                </div>
+                </a>
                 <nav class="header__navigation">
-                    <ul>
-                        <li><a href="#">Получить каталог</a></li>
-                        <li><a href="#">Доставка</a></li>
-                        <li><a href="#">Услуги байера</a></li>
-                        <li><a href="#">Частые вопросы</a></li>
-                        <li><a href="#">Контакты</a></li>
+                    <ul class="menu">
+                        <li><a href="#" class="menu__link">Получить каталог</a></li>
+                        <li><a href="#" class="menu__link">Доставка</a></li>
+                        <li><a href="#" class="menu__link">Услуги байера</a></li>
+                        <li><a href="#" class="menu__link">Частые вопросы</a></li>
+                        <li><a href="#" class="menu__link">Контакты</a></li>
                     </ul>
                 </nav>
                 <div class="header__contacts">
@@ -47,6 +49,16 @@
             </div>
         </div>
     </header>
+
+    <div class="hamburger">
+        <a href="index.html" class="hamburger__logo"><img src="./assets/icons/zema.svg" alt="logo"></a>
+        <div class="hamburger__icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
     <section class="promo">
         <div class="container">
             <div class="promo-wrapper">
@@ -221,7 +233,6 @@
                     Найдем абсолютно любой товар, бренд и производителя и договоримся о лучших условиях.
                 </div>
                 <div class="buyer__form-text">Заполните форму для связи с профессиональным байером</div>
-
                 <form action="#">
                     <label class="buyer__form-field">
                         <span>Имя</span>
@@ -231,7 +242,6 @@
                         <span>Телефон</span>
                         <input class="buyer__form-phone" name="phone" placeholder="Ваш телефон" type="tel">
                     </label>
-
                     <div class="buyer__form-checkboxes">
                         <label for="telegram">
                             <input type="checkbox" name="telegram" id="telegram" value="telegram">
@@ -246,7 +256,6 @@
                             <span>Viber</span>
                         </label>
                     </div>
-
                     <button class="buyer__form-button">Оставить заявку</button>
                 </form>
             </div>
@@ -255,14 +264,152 @@
 
     <section class="faq">
         <div class="container">
+            <svg class="faq__circle">
+                <use xlink:href="./assets/sprite-figures.svg#circle"></use>
+            </svg>
             <div class="faq__header">
-                <h2 class="faq__title">Почему выбирают нас</h2>
+                <h2 class="faq__title">Частые вопросы</h2>
                 <svg class="faq__ornament">
                     <use xlink:href="./assets/sprite-figures.svg#ornament"></use>
                 </svg>
             </div>
             <div class="faq__subtitle">
-                Надеемся, что эти ответы помогут вам разобраться в тонкостях и получить все выгоды от партнерства с турецким производителем.
+                Надеемся, что эти ответы помогут вам разобраться в тонкостях и получить все выгоды от партнерства с
+                турецким производителем.
+            </div>
+            <!-- <div class="faq-list__item-divider"></div> -->
+            <div class="faq-list__item">
+                <div class="faq-list__item-title">
+                    <span>Как сделать заказ?</span>
+                    <div class="faq-list__item-toggler">
+                        <svg>
+                            <use xlink:href="./assets/sprite-figures.svg#arrow"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-list__item-content">
+                    <div class="faq-list__item-description">
+                        Все заказы оформляются напрямую у вашего личного менеджера удобным образом. После оформления
+                        заявки на нашем сайте вы сразу получите все необходимые контакты. Также, вы можете написать нам
+                        в WhatsApp.
+                    </div>
+                </div>
+                <div class="faq-list__item-divider"></div>
+            </div>
+            <div class="faq-list__item">
+                <div class="faq-list__item-title">
+                    <span>Как производится оплата?</span>
+                    <div class="faq-list__item-toggler">
+                        <svg>
+                            <use xlink:href="./assets/sprite-figures.svg#arrow"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-list__item-content">
+                    <div class="faq-list__item-description">
+                        Мы принимаем оплату перед отправкой продукции удобным вам способом. Все зависит от страны, в
+                        которой Вы находитесь. Чаще всего используются прямые денежные переводы, такие как Ria.
+                    </div>
+                </div>
+                <div class="faq-list__item-divider"></div>
+            </div>
+            <div class="faq-list__item">
+                <div class="faq-list__item-title">
+                    <span>Сколько в среднем товар будет доставляться в мою страну?</span>
+                    <div class="faq-list__item-toggler">
+                        <svg>
+                            <use xlink:href="./assets/sprite-figures.svg#arrow"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-list__item-content">
+                    <div class="faq-list__item-description">
+                        Длительность доставки товара полностью зависит от страны, в которой Вы находитесь и выбранного
+                        способа доставки. Например авто доставка из Турции в Россию будет идти примерно 10-12 дней.
+                    </div>
+                </div>
+                <div class="faq-list__item-divider"></div>
+            </div>
+            <div class="faq-list__item">
+                <div class="faq-list__item-title">
+                    <span>Возможно ли дополнительные расходы или изменение итоговой стоимости?</span>
+                    <div class="faq-list__item-toggler">
+                        <svg>
+                            <use xlink:href="./assets/sprite-figures.svg#arrow"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-list__item-content">
+                    <div class="faq-list__item-description">
+                        Нет.
+                    </div>
+                </div>
+                <div class="faq-list__item-divider"></div>
+            </div>
+            <div class="faq-list__item">
+                <div class="faq-list__item-title">
+                    <span>Каким образом вы упаковываете товары?</span>
+                    <div class="faq-list__item-toggler">
+                        <svg>
+                            <use xlink:href="./assets/sprite-figures.svg#arrow"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-list__item-content">
+                    <div class="faq-list__item-description">
+                        Все зависит от категории товара. Делаем все, чтобы товар прибыл к вам в полной сохранности.
+                    </div>
+                </div>
+                <div class="faq-list__item-divider"></div>
+            </div>
+            <div class="faq-list__item">
+                <div class="faq-list__item-title">
+                    <span>От какой суммы можно сделать заказ?</span>
+                    <div class="faq-list__item-toggler">
+                        <svg>
+                            <use xlink:href="./assets/sprite-figures.svg#arrow"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-list__item-content">
+                    <div class="faq-list__item-description">
+                        Минимального порога нет.
+                    </div>
+                </div>
+                <div class="faq-list__item-divider"></div>
+            </div>
+            <div class="faq-list__item">
+                <div class="faq-list__item-title">
+                    <span>Сколько стоят услуги Байера?</span>
+                    <div class="faq-list__item-toggler">
+                        <svg>
+                            <use xlink:href="./assets/sprite-figures.svg#arrow"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-list__item-content">
+                    <div class="faq-list__item-description">
+                        Фиксированной стоимости нет, зависит от количества поставщиков и категорий товаров. При первом
+                        обращении наш менеджер ответит на этот вопрос.
+                    </div>
+                </div>
+                <div class="faq-list__item-divider"></div>
+            </div>
+            <div class="faq-list__item">
+                <div class="faq-list__item-title">
+                    <span>Что нужно делать, чтобы получить особые условия?</span>
+                    <div class="faq-list__item-toggler">
+                        <svg>
+                            <use xlink:href="./assets/sprite-figures.svg#arrow"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-list__item-content">
+                    <div class="faq-list__item-description">
+                        Для постоянных и крупных клиентов предусмотрена бонусная система.
+                    </div>
+                </div>
+                <div class="faq-list__item-divider"></div>
             </div>
         </div>
     </section>
@@ -354,6 +501,52 @@
             </div>
         </div>
     </footer>
+
+    <div class="overlay"></div>
+    <div class="modal" id="price-catalog">
+        <div class="modal__close"><span class="modal__close-icon">&times;</span></div>
+        <div class="modal__form-title">Товары от прямого производителя из Турции без посредников</div>
+        <form class="modal__form" action="#">
+            <label class="modal__form-field">
+                <span>E-mail</span>
+                <input class="modal__form-email" name="email" placeholder="Ваша электронная почта" type="email">
+            </label>
+            <label class="modal__form-field">
+                <span>Телефон</span>
+                <input class="modal__form-phone" name="phone" placeholder="Ваш телефон" type="tel">
+            </label>
+            <div class="modal__form-checkboxes">
+                <label for="telegram">
+                    <input type="checkbox" name="telegram" id="telegram" value="telegram">
+                    <span>Telegram</span>
+                </label>
+                <label for="wa">
+                    <input type="checkbox" name="wa" id="wa" value="whatsapp">
+                    <span>WhatsApp</span>
+                </label>
+                <label for="viber">
+                    <input type="checkbox" name="viber" id="viber" value="viber">
+                    <span>Viber</span>
+                </label>
+            </div>
+            <button class="modal__form-button">Получить каталог с ценами</button>
+        </form>
+    </div>
+
+    <div class="modal" id="thanks">
+        <div class="modal__close"><span class="modal__close-icon">&times;</span></div>
+        <div class="modal__thanks-title">Спасибо!</div>
+        <div class="modal__thanks-text">
+            <p>Мы приняли вашу заявку и совсем скоро отправим вам актуальный каталог с ценами (сумки, женские платья).
+            </p>
+            <p>Для вашего удобства все наши товары с ценами доступы в Telegram 👇</p>
+        </div>
+        <button class="modal__thanks-button">
+            <img src="./assets/icons/telegram.svg" alt="tg" class="modal__thanks-button-tg">
+            <span>Получить каталог с ценами в Telegram</span>
+        </button>
+    </div>
+    <script src="main.js"></script>
 </body>
 
 </html>
