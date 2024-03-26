@@ -1,0 +1,14 @@
+@keyframes promo {
+    0% {top: 0;}
+    100% {transform:translateY(calc(-100% + 880px));}
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
