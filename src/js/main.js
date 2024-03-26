@@ -120,4 +120,28 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
         document.body.style.paddingRight = '';
     });
+
+    // form buyer validation
+    // const formInput = document.querySelector('.contacts__form input');
+    const formBtn = document.querySelector('.buyer__form-button');
+    const wrapper1 = document.querySelector('.buyer__wrapper-1');
+    const successMessage = document.querySelector('.buyer__wrapper-2');
+    const form = document.querySelector('.buyer__form'); 
+
+    formBtn.addEventListener('click', event => {
+        event.preventDefault();
+
+        // if (!formInput.value) {
+        //     formInput.labels[0].classList.add('input-incorrect');
+        // } else {
+            //Тут має бути відправка даних
+            wrapper1.style.display = 'none';
+            successMessage.style.display = 'block';
+            form.style.display = 'flex';
+        // }
+    });
+
+    // formInput.addEventListener('input', event => {
+    //     event.target.labels[0].classList.remove('input-incorrect');
+    // });
 });

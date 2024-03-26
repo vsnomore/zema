@@ -1,7 +1,7 @@
 .buyer {
     padding: 137px 0 88px 0;
     position: relative;
-    
+
 
     &:before {
         content: "";
@@ -29,14 +29,41 @@
         z-index: -20;
     }
 
+    &__title {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 58px;
+        letter-spacing: -2%;
+        color: #fff;
+    }
+
+    &__subtitle {
+        margin-top: 16px;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 28px;
+        color: #E3E3E3;
+    }
+
+    &__text {
+        margin-top: 16px;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 23px;
+        color: #E3E3E3;
+    }
+
     &__form {
         width: 648px;
+        min-height: 575px;
         padding: 24px;
         border-radius: 8px;
         box-shadow: 5px 6px 36px 0px rgba(255, 255, 255, 0.25);
         background: rgba(18, 17, 16, 0.96);
         position: relative;
         z-index: 1;
+        justify-content: center;
+        align-items: center;
 
         &:before {
             content: "";
@@ -48,30 +75,6 @@
             height: 100%;
             background: url('./assets/img/pattern2.png') repeat;
             z-index: -10;
-        }
-
-        &-title {
-            font-size: 48px;
-            font-weight: 700;
-            line-height: 58px;
-            letter-spacing: -2%;
-            color: #fff;
-        }
-
-        &-subtitle {
-            margin-top: 16px;
-            font-size: 24px;
-            font-weight: 400;
-            line-height: 28px;
-            color: #E3E3E3;
-        }
-
-        &-text {
-            margin-top: 16px;
-            font-size: 20px;
-            font-weight: 400;
-            line-height: 23px;
-            color: #E3E3E3;
         }
 
         form {
@@ -167,6 +170,9 @@
         }
 
         &-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-top: 24px;
             height: 64px;
             width: 100%;
@@ -178,6 +184,64 @@
             border-radius: 8px;
             background: rgb(235, 202, 0);
             cursor: pointer;
+        }
+    }
+
+    &__wrapper-1 {
+        display: block;
+    }
+
+    &__wrapper-2 {
+        display: none;
+        // display: flex;
+    }
+
+    &__thanks {
+        width: 600px;
+
+        &-title {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 58px;
+            letter-spacing: -2%;
+            color: #fff;
+        }
+
+        &-text {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+
+            p {
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 28px;
+                color: #E3E3E3;
+            }
+        }
+
+        &-button {
+            margin-top: 32px;
+            height: 64px;
+            width: 100%;
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 26px;
+            text-align: center;
+            color: #000;
+            border-radius: 8px;
+            background: rgb(235, 202, 0);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+
+            &-tg {
+                width: 29px;
+                height: 24px;
+            }
         }
     }
 }
