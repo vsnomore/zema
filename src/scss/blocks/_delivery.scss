@@ -17,15 +17,18 @@
 
     .container {
         position: relative;
+
+        .delivery__tie {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: -36px;
+            height: 113px;
+            width: 172px;
+        }
     }
 
-    svg {
-        position: absolute;
-        right: -110px;
-        top: -36px;
-        height: 113px;
-        width: 172px;
-    }
+    
 
     &__title {
         font-weight: 700;
@@ -75,4 +78,14 @@
     }
 
 
+}
+
+@media (max-width: 992px) {
+    .delivery__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .delivery__grid-item {
+        height: 180px;
+    }
 }

@@ -113,3 +113,34 @@
         }
     }
 }
+
+@media (max-width: 1200px) {
+
+    .promo__infoblock {
+        width: 470px;
+    }
+
+    .promo-wrapper {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .promo {
+        height: 800px;
+        display: flex;
+        align-items: center;
+    }
+
+    .promo__collage {
+        display: none;
+    }
+
+    .promo-wrapper {
+        display: block;
+    }
+
+    .promo__infoblock {
+        width: 100%;
+    }
+}
