@@ -112,8 +112,10 @@
                 <div class="promo__collage">
                     <div class="promo__collage-item">
                         <img src="./assets/img/photoblock1.png" alt="column of photos" class="promo__collage-column">
+                        <img src="./assets/img/photoblock1.png" alt="column of photos" class="promo__collage-column">
                     </div>
                     <div class="promo__collage-item">
+                        <img src="./assets/img/photoblock2.png" alt="column of photos" class="promo__collage-column">
                         <img src="./assets/img/photoblock2.png" alt="column of photos" class="promo__collage-column">
                     </div>
                 </div>
@@ -126,22 +128,24 @@
             <svg class="delivery__tie">
                 <use xlink:href="./assets/sprite-figures.svg#tie"></use>
             </svg>
-            <h2 class="delivery__title">Доставка из Турции</h2>
-            <div class="delivery__subtitle">Подберем самый выгодный и удобный способ доставки индивидуально под ваш
-                заказ</div>
-            <div class="delivery__grid">
-                <div class="delivery__grid-item">Автодоставка</div>
-                <div class="delivery__grid-item">Авиадоставка</div>
-                <div class="delivery__grid-item">ЖД доставка</div>
-                <div class="delivery__grid-item">Доставка морским транспортом</div>
+            <div data-js="animated-item" class="anim__shift-bottom">
+                <h2 class="delivery__title">Доставка из Турции</h2>
+                <div class="delivery__subtitle">Подберем самый выгодный и удобный способ доставки индивидуально под ваш
+                    заказ</div>
+                <div class="delivery__grid">
+                    <div class="delivery__grid-item">Автодоставка</div>
+                    <div class="delivery__grid-item">Авиадоставка</div>
+                    <div class="delivery__grid-item">ЖД доставка</div>
+                    <div class="delivery__grid-item">Доставка морским транспортом</div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="marketplaces">
         <div class="container">
-            <div class="marketplaces__title">Как наши клиенты продают товары на популярных маркетплейсах</div>
-            <div class="marketplaces__logos">
+            <div data-js="animated-item" class="marketplaces__title anim__shift-left">Как наши клиенты продают товары на популярных маркетплейсах</div>
+            <div data-js="animated-item" class="marketplaces__logos anim__shift-left">
                 <div class="marketplaces__logo">
                     <img src="./assets/img/wb.jpg" alt="wildberries" class="marketplaces__logo-img">
                 </div>
@@ -156,7 +160,7 @@
                 </div>
             </div>
             <div class="marketplaces__tabs">
-                <div class="marketplaces__content">
+                <div data-js="animated-item" class="marketplaces__content anim__shift-left">
                     <div class="marketplaces__content-item" data-active="true">
                         <div class="marketplaces__inscription">
                             <div class="marketplaces__inscription-wrapper">
@@ -326,9 +330,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="marketplaces__switches">
+                <div data-js="animated-item" class="marketplaces__switches anim__shift-right">
                     <div class="marketplaces__switches-title">Другие товары</div>
-                    <div class="marketplaces__grid">
+                    <div data-js="grid-animation" class="marketplaces__grid">
                         <div data-active="true" class="marketplaces__grid-item"></div>
                         <div data-active="false" class="marketplaces__grid-item"></div>
                         <div data-active="false" class="marketplaces__grid-item"></div>
@@ -362,7 +366,7 @@
             </div>
             <div class="why__subtitle">Мы определили свои сильные и слабые стороны, вот что получилось...</div>
             <div class="why__wrapper">
-                <div class="why__item">
+                <div data-js="animated-item" class="why__item anim__shift-bottom">
                     <div class="why__img">
                         <img src="./assets/img/why1.jpg" alt="cheap">
                     </div>
@@ -375,7 +379,7 @@
                             выгодную стоимость товаров.</div>
                     </div>
                 </div>
-                <div class="why__item">
+                <div data-js="animated-item" class="why__item anim__shift-bottom">
                     <div class="why__img">
                         <img src="./assets/img/why2.jpg" alt="quality">
                     </div>
@@ -388,7 +392,7 @@
                             Помимо всего прочего, мы даем 100% гарантию на обмен любого товара. </div>
                     </div>
                 </div>
-                <div class="why__item">
+                <div data-js="animated-item" class="why__item anim__shift-bottom">
                     <div class="why__img">
                         <img src="./assets/img/why3.jpg" alt="trends">
                     </div>
@@ -402,7 +406,7 @@
                             пользуются спросом.</div>
                     </div>
                 </div>
-                <div class="why__item">
+                <div data-js="animated-item" class="why__item anim__shift-bottom">
                     <div class="why__img">
                         <img src="./assets/img/why4.jpg" alt="delivery">
                     </div>
@@ -414,7 +418,7 @@
                             отправки проходит менее 1-го рабочее дня. </div>
                     </div>
                 </div>
-                <div class="why__item">
+                <div data-js="animated-item" class="why__item anim__shift-bottom">
                     <div class="why__img">
                         <img src="./assets/img/why5.jpg" alt="photos">
                     </div>
@@ -431,14 +435,14 @@
 
     <section class="buyer">
         <div class="container">
-            <div class="buyer__form">
+            <div data-js="animated-item" class="buyer__form anim__shift-left">
                 <div class="buyer__wrapper-1">
                     <h2 class="buyer__title">Услуги Байера в Турции</h2>
                     <div class="buyer__subtitle">
                         Найдем абсолютно любой товар, бренд и производителя и договоримся о лучших условиях.
                     </div>
                     <div class="buyer__text">Заполните форму для связи с профессиональным байером</div>
-                    <form action="#">
+                    <form data-form="contact" action="#">
                         <label class="buyer__form-field">
                             <span>Имя</span>
                             <input class="buyer__form-name" name="name" placeholder="Ваше имя" type="text">
@@ -461,7 +465,7 @@
                                 <span>Viber</span>
                             </label>
                         </div>
-                        <a href="#" class="buyer__form-button">Оставить заявку</a>
+                        <button data-js="form-submit" class="buyer__form-button">Оставить заявку</button>
                     </form>
                 </div>
                 <div class="buyer__wrapper-2">
@@ -738,16 +742,16 @@
                     <input class="modal__form-phone" name="phone" placeholder="Ваш телефон" type="tel">
                 </label>
                 <div class="modal__form-checkboxes">
-                    <label for="telegram">
-                        <input type="checkbox" name="telegram" id="telegram" value="telegram">
+                    <label>
+                        <input type="checkbox" name="telegram" id="telegram2" value="telegram">
                         <span>Telegram</span>
                     </label>
-                    <label for="wa">
-                        <input type="checkbox" name="wa" id="wa" value="whatsapp">
+                    <label>
+                        <input type="checkbox" name="wa" id="wa2" value="whatsapp">
                         <span>WhatsApp</span>
                     </label>
-                    <label for="viber">
-                        <input type="checkbox" name="viber" id="viber" value="viber">
+                    <label>
+                        <input type="checkbox" name="viber" id="viber2" value="viber">
                         <span>Viber</span>
                     </label>
                 </div>

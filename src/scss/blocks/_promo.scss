@@ -101,15 +101,11 @@
         height: 880px;
 
         &-item {
-            &:nth-child(1) {
-                position: relative;
-                animation: promo 71s infinite linear;
-            }
-
-            &:nth-child(2) {
-                position: relative;
-                animation: promo 76s infinite linear;
-            }
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            top: 0;
+            position: relative;
         }
     }
 }

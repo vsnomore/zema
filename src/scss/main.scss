@@ -7,11 +7,24 @@ html {
 
 body {
     background: #121110;
+    overflow-x: hidden;
 }
 
 .container {
     width: 1152px;
     margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(214, 214, 214, 0.2);
+}
+::-webkit-scrollbar-thumb {
+    background-color: #ebca00;
+    border-radius: 20px;
+    border: transparent;
 }
 
 @media (max-width: 1200px) {

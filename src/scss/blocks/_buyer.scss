@@ -96,6 +96,20 @@
                 color: #fff;
             }
 
+            &.incorrect {
+                // span {
+                //     color: red;
+                // }
+
+                input {
+                    border-color: red;
+                }
+
+                input::placeholder {
+                    color: red;
+                }
+            }
+
             input {
                 border: 0;
                 border-bottom: 1px solid #fff;
@@ -245,3 +259,9 @@
         }
     }
 }
+
+// span {
+//     .buyer__wrapper-1 & {
+//         color: red;
+//     }
+// }

@@ -241,6 +241,10 @@
             &:nth-child(14) {
                 background: url('./assets/img/anorak.jpg') center / cover no-repeat;
             }
+
+            &[data-active="false"]:hover {
+                animation: shaking 0.7s linear infinite;
+            }
         }
         
     }

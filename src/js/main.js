@@ -1,5 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     acordeon();
+    gallery('.promo__collage-item:first-child', "35000");
+    gallery('.promo__collage-item:nth-child(2)', "40000");
+
+    animation();
+    gridAnimation();
+    validForm();
+
 
     // mob menu
     const mobMenu = document.querySelector('.header');
@@ -82,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalWindow.classList.add('show');
                 overlay.classList.add('show');
                 document.body.style.overflow = 'hidden';
-                document.body.style.paddingRight = '12px';
+                document.body.style.paddingRight = '8px';
             });
         }
     });
@@ -92,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         priceCatalog.classList.add('show');
         overlay.classList.add('show');
         document.body.style.overflow = 'hidden';
-        document.body.style.paddingRight = '12px';
+        document.body.style.paddingRight = '8px';
     });
 
     promoBtn.addEventListener('click', (e) => {
@@ -100,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         priceCatalog.classList.add('show');
         overlay.classList.add('show');
         document.body.style.overflow = 'hidden';
-        document.body.style.paddingRight = '12px';
+        document.body.style.paddingRight = '8px';
     });
 
     closeButtons.forEach(function (item) {
@@ -122,17 +129,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // form buyer 
-    const formBtn = document.querySelector('.buyer__form-button');
-    const wrapper1 = document.querySelector('.buyer__wrapper-1');
-    const successMessage = document.querySelector('.buyer__wrapper-2');
-    const form = document.querySelector('.buyer__form');
+    // const formBtn = document.querySelector('.buyer__form-button');
+    // const wrapper1 = document.querySelector('.buyer__wrapper-1');
+    // const successMessage = document.querySelector('.buyer__wrapper-2');
+    // const form = document.querySelector('.buyer__form');
 
-    formBtn.addEventListener('click', event => {
-        event.preventDefault();
-        wrapper1.style.display = 'none';
-        successMessage.style.display = 'block';
-        form.style.display = 'flex';
-    });
+    // formBtn.addEventListener('click', event => {
+    //     event.preventDefault();
+    //     wrapper1.style.display = 'none';
+    //     successMessage.style.display = 'block';
+    //     form.style.display = 'flex';
+    // });
 
     // form modal
     const modalBtn = document.querySelector('.modal__form-button');
@@ -163,3 +170,120 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+function gallery(wrapperItem, transition) {
+    const wrapper = document.querySelector(wrapperItem);
+  
+    shift();
+    
+    function shift() {
+        const firstItem = wrapper.querySelector('.promo__collage-column');
+    
+        const itemHeight = window.getComputedStyle(firstItem).height.slice(0, -2);
+        const gap = window.getComputedStyle(wrapper).gap.slice(0, -2);
+        wrapper.style.top = `-${+itemHeight + +gap}px`;
+        wrapper.style.transition = `all ${transition}ms linear`;
+  
+        setTimeout(() => {
+            firstItem.remove();
+            wrapper.append(firstItem);
+            wrapper.style.transition = `unset`;
+            wrapper.style.top = `0px`;
+    
+            shift();
+        }, transition);
+    }
+}
+
+function animation() {  
+    const animatedItems = document.querySelectorAll('[data-js="animated-item"]');
+    function onEntry(entry) {
+        entry.forEach(change => {
+            if (change.isIntersecting) {
+                change.target.classList.add('animation_done');
+            }
+        });
+    }
+  
+    let options = { threshold: [0.8] };
+    let observer = new IntersectionObserver(onEntry, options);
+  
+    animatedItems.forEach(el => {
+        observer.observe(el);
+    });
+}
+
+function gridAnimation() {
+    const animatedItem = document.querySelector('[data-js="grid-animation"]');
+    function onEntry(entry) {
+        entry.forEach(change => {
+            if (change.isIntersecting) {
+                setTimeout(() => {
+                    change.target.classList.add('grid-animation_done');
+                }, 1000)
+            }
+        });
+    }
+  
+    let options = { threshold: [0.8] };
+    let observer = new IntersectionObserver(onEntry, options);
+  
+    observer.observe(animatedItem);
+}
+
+function validForm() {
+    const validateEmail = (email) => {
+            return String(email).toLowerCase().match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+        };
+  
+    document.querySelectorAll('[data-form="contact"]').forEach(el => {
+        validation(el);
+    });
+  
+    function validation(parentForm) {
+      const form = parentForm,
+            formButton = form.querySelector('[data-js="form-submit"]'),
+            formInputs = form.querySelectorAll('input:not([type="submit"])');
+  
+      formButton.addEventListener('click', e => {
+        // e.preventDefault();
+        statusForSendingData = true;
+  
+        formInputs.forEach(el => {
+            if (el.name == 'email' && !validateEmail(el.value)) {
+            el.labels[0].classList.add('incorrect');
+            statusForSendingData = false;
+            }
+
+          if (el.name == 'name' && !el.value) {
+            el.labels[0].classList.add('incorrect');
+            statusForSendingData = false;
+            el.placeholder = "Поле обязательное*";
+          }
+  
+          if (el.name == 'phone' && !el.value) {
+            el.labels[0].classList.add('incorrect');
+            statusForSendingData = false;
+            el.placeholder = "Поле обязательное*";
+          }
+        });
+  
+        if (statusForSendingData) {
+            const successMessage = document.querySelector('.buyer__wrapper-2');
+            const wrapper1 = document.querySelector('.buyer__wrapper-1');
+
+            successMessage.style.display = 'block';
+            form.style.display = 'flex';
+            wrapper1.style.display = 'none';
+        } else {
+            e.preventDefault();
+        }
+      });
+
+        formInputs.forEach( el => el.addEventListener('input', () => {
+            el.labels[0].classList.remove('incorrect');
+            el.placeholder = "";
+        }));
+    }
+}
