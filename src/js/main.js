@@ -34,21 +34,21 @@ document.addEventListener('DOMContentLoaded', () => {
     function acordeon() {
         const titleWrapers = document.querySelectorAll('.faq-list__item-title');
         const contentBlocks = document.querySelectorAll('.faq-list__item-content');
-    
-        titleWrapers.forEach((el,ind) => {
+
+        titleWrapers.forEach((el, ind) => {
             el.addEventListener('click', () => {
                 if (!contentBlocks[ind].classList.contains('content-active')) {
                     if (window.innerWidth > 992) {
-                        const maxHeigth = Math.max(window.getComputedStyle(contentBlocks[ind].querySelector('.faq-list__item-description')).height.slice(0,-2));
+                        const maxHeigth = Math.max(window.getComputedStyle(contentBlocks[ind].querySelector('.faq-list__item-description')).height.slice(0, -2));
                         contentBlocks[ind].style.height = `${maxHeigth + 16}px`;
                         contentBlocks[ind].style.paddingTop = `10px`;
                     } else {
-                        const sumHeigth = +window.getComputedStyle(contentBlocks[ind].querySelector('.faq-list__item-description')).height.slice(0,-2);
+                        const sumHeigth = +window.getComputedStyle(contentBlocks[ind].querySelector('.faq-list__item-description')).height.slice(0, -2);
                         console.log(sumHeigth);
                         contentBlocks[ind].style.height = `${sumHeigth + 16}px`;
                         contentBlocks[ind].style.paddingTop = `10px`;
                     }
-                    
+
                     contentBlocks[ind].classList.add('content-active');
 
                     el.classList.add('faq-list__item-active')
@@ -56,12 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     contentBlocks[ind].classList.remove('content-active');
                     contentBlocks[ind].style.height = `0px`;
                     contentBlocks[ind].style.paddingTop = `0`;
-    
+
                     el.classList.remove('faq-list__item-active')
                 }
             });
         });
-    
+
     }
 
     // MODALS
@@ -121,27 +121,45 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.paddingRight = '';
     });
 
-    // form buyer validation
-    // const formInput = document.querySelector('.contacts__form input');
+    // form buyer 
     const formBtn = document.querySelector('.buyer__form-button');
     const wrapper1 = document.querySelector('.buyer__wrapper-1');
     const successMessage = document.querySelector('.buyer__wrapper-2');
-    const form = document.querySelector('.buyer__form'); 
+    const form = document.querySelector('.buyer__form');
 
     formBtn.addEventListener('click', event => {
         event.preventDefault();
-
-        // if (!formInput.value) {
-        //     formInput.labels[0].classList.add('input-incorrect');
-        // } else {
-            //Тут має бути відправка даних
-            wrapper1.style.display = 'none';
-            successMessage.style.display = 'block';
-            form.style.display = 'flex';
-        // }
+        wrapper1.style.display = 'none';
+        successMessage.style.display = 'block';
+        form.style.display = 'flex';
     });
 
-    // formInput.addEventListener('input', event => {
-    //     event.target.labels[0].classList.remove('input-incorrect');
-    // });
+    // form modal
+    const modalBtn = document.querySelector('.modal__form-button');
+    const modalWrapper1 = document.querySelector('.modal__wrapper-1');
+    const thanksMessage = document.querySelector('.modal__wrapper-2');
+
+    modalBtn.addEventListener('click', event => {
+        event.preventDefault();
+        modalWrapper1.style.display = 'none';
+        thanksMessage.style.display = 'block';
+    });
+
+    //marketplaces tabs
+    const headlines = document.querySelectorAll('.marketplaces__grid-item');
+    const content = document.querySelectorAll('.marketplaces__content-item');
+
+    headlines.forEach((el, ind) => {
+        el.addEventListener('click', () => {
+            headlines.forEach(el => {
+                el.dataset.active = 'false';
+            });
+            content.forEach(el => {
+                el.dataset.active = 'false';
+            });
+
+            el.dataset.active = 'true';
+            content[ind].dataset.active = 'true';
+        });
+    });
 });

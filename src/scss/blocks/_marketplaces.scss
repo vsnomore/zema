@@ -31,4 +31,211 @@
     &__logo {
         border-radius: 3px;
     }
+
+    &__tabs {
+        margin-top: 64px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 64px;
+    }
+
+    &__content {
+        width: 600px;
+        height: 600px;
+
+        &-title {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 21px;
+            color: #000;
+        }
+
+        &-descr {
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16px;
+            color: #3A3636;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+        }
+
+        &-item {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            border-radius: 8px;
+            display: none;
+
+            &:nth-child(1) {
+                background: url('./assets/img/bags.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(2) {
+                background: url('./assets/img/cap.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(3) {
+                background: url('./assets/img/sneakers.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(4) {
+                background: url('./assets/img/bwsuit.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(5) {
+                background: url('./assets/img/shirt.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(6) {
+                background: url('./assets/img/blackbag.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(7) {
+                background: url('./assets/img/jacket.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(8) {
+                background: url('./assets/img/bags3.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(9) {
+                background: url('./assets/img/sneakers2.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(10) {
+                background: url('./assets/img/brownsuit.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(11) {
+                background: url('./assets/img/bags4.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(12) {
+                background: url('./assets/img/dress.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(13) {
+                background: url('./assets/img/boots.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(14) {
+                background: url('./assets/img/anorak.jpg') center / cover no-repeat;
+            }
+
+            &[data-active="true"] {
+                display: block;
+            }
+        }
+    }
+
+    &__inscription {
+        position: absolute;
+        width: 392px;
+        bottom: -23px;
+        left: 21px;
+
+        &-wrapper {
+            border-radius: 8px;
+            padding: 8px 17px;
+            position: relative;
+            background: #EBCA00;
+
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: url('./assets/img/pattern1.png') repeat;
+                opacity: 0.08;
+            }
+        }
+    }
+
+    &__switches {
+        &-title {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 23px;
+            color: #E3E3E3;
+        }
+    }
+
+    &__grid {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+
+        &-item {
+            border-radius: 4px;
+            aspect-ratio: 1 / 1;
+            cursor: pointer;
+
+
+            &:nth-child(1) {
+                background: url('./assets/img/bags.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(2) {
+                background: url('./assets/img/cap.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(3) {
+                background: url('./assets/img/sneakers.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(4) {
+                background: url('./assets/img/bwsuit.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(5) {
+                background: url('./assets/img/shirt.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(6) {
+                background: url('./assets/img/blackbag.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(7) {
+                background: url('./assets/img/jacket.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(8) {
+                background: url('./assets/img/bags3.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(9) {
+                background: url('./assets/img/sneakers2.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(10) {
+                background: url('./assets/img/brownsuit.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(11) {
+                background: url('./assets/img/bags4.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(12) {
+                background: url('./assets/img/dress.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(13) {
+                background: url('./assets/img/boots.jpg') center / cover no-repeat;
+            }
+
+            &:nth-child(14) {
+                background: url('./assets/img/anorak.jpg') center / cover no-repeat;
+            }
+        }
+        
+    }
 }
