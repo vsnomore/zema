@@ -2,6 +2,7 @@
     background-color: #fff;
     padding: 64px 0;
     position: relative;
+    overflow: hidden;
 
     &:before {
         content: "";
@@ -21,7 +22,7 @@
         .delivery__tie {
             display: block;
             position: absolute;
-            right: 0;
+            right: -113px;
             top: -36px;
             height: 113px;
             width: 172px;
