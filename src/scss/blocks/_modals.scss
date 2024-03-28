@@ -218,3 +218,74 @@ form {
 .show {
     display: block;
 }
+
+@media (max-width: 768px) {
+    .modal {
+        width: 100%;
+    }
+
+    .modal__form-title {
+        font-size: 32px;
+        line-height: 36px;
+    }
+
+    .modal__form-field span {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .modal form {
+        margin-top: 24px;
+    }
+
+    .modal__form-checkboxes {
+        margin-top: 16px;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .modal__form-checkboxes label {
+        gap: 6px;
+        font-size: 14px;
+    }
+
+    .modal__form-button {
+        margin-top: 16px;
+        height: 48px;
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .modal__thanks-title {
+        font-size: 32px;
+        line-height: 36px;
+    }
+
+    .modal__thanks-text {
+        gap: 12px;
+    }
+
+    .modal__thanks-text p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .modal__thanks-button {
+        margin-top: 24px;
+        height: 48px;
+        font-size: 18px;
+        line-height: 22px;
+        gap: 8px;
+    }
+
+    .modal__thanks-button-tg {
+        width: 19px;
+        height: 14px;
+    }
+}
+
+@media (max-width: 410px) {
+    .modal__thanks-button-tg {
+        display: none;
+    }
+}

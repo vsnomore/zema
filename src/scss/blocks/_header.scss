@@ -62,11 +62,14 @@
 }
 
 .hamburger {
-    height: 76px;
+    height: 64px;
     background-color: #000;
     display: none;
-    padding: 14px 16px;
-    
+    padding: 10px 12px;
+
+    &>a {
+        display: flex;
+    }
 
     &__logo {
         img {
@@ -76,7 +79,7 @@
 
     &__icon {
         position: absolute;
-        top: 80px;
+        top: 75px;
         right: 16px;
         height: 40px;
         width: 40px;
@@ -129,6 +132,8 @@
     
         &__logo {
             width: 150px;
+            display: flex;
+            align-items: center;
         }
     
         &__navigation {
@@ -187,5 +192,11 @@
     .hamburger {
         display: flex;
         align-items: center;
+        height: 64px;
+        padding: 10px 12px;
+    }
+
+    .header__wa {
+        display: none;
     }
 }

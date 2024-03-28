@@ -141,7 +141,6 @@
                 gap: 8px;
                 font-size: 18px;
                 font-weight: 500;
-                line-height: 26px;
                 color: #E3E3E3;
             }
         }
@@ -265,3 +264,62 @@
 //         color: red;
 //     }
 // }
+
+@media (max-width: 768px) {
+
+    .buyer {
+        padding: 90px 0 60px 0;
+    }
+
+    .buyer__form {
+        width: 100%;
+        min-height: 400px;
+    }
+
+    .buyer__title {
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+    .buyer__subtitle {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .buyer__text {
+        margin-top: 8px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .buyer__form-field span {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .buyer__form form {
+        margin-top: 24px;
+    }
+
+    .buyer__form-field:last-of-type {
+        margin-top: 16px;
+    }
+
+    .buyer__form-checkboxes {
+        margin-top: 16px;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .buyer__form-checkboxes label {
+        gap: 6px;
+        font-size: 14px;
+    }
+
+    .buyer__form-button {
+        margin-top: 16px;
+        height: 48px;
+        font-size: 20px;
+        line-height: 24px;
+    }
+}

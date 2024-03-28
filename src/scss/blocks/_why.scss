@@ -111,3 +111,47 @@
         z-index: -1;
     }
 }
+
+@media (max-width: 992px) {
+    .why__ornament {
+        display: none;
+    }
+
+    .why__item {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .why {
+        padding: 32px 0;
+    }
+
+    .why__title {
+        font-size: 32px;
+    }
+
+    .why__item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .why__descr {
+        align-items: center;
+    }
+
+    .why__img {
+        width: 100%;
+        height: 200px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .why__wrapper {
+        gap: 24px;
+    }
+}

@@ -140,3 +140,43 @@
         width: 100%;
     }
 }
+
+@media (max-width: 768px) {
+
+    .promo {
+        height: 780px;
+    }
+    
+    .promo__title {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 576px) {
+    .promo__title {
+        font-size: 36px;
+    }
+
+    .promo__subtitle {
+        margin-top: 24px;
+    }
+
+    .promo__btn {
+        margin-top: 24px;
+        padding: 12px;
+        font-size: 20px;
+    }
+
+    .promo__categories-title {
+        font-size: 16px;
+    }
+
+    .promo__categories {
+        margin-top: 24px;
+        gap: 12px;
+    }
+
+    .promo__categories-name {
+        font-size: 12px;
+    }
+}

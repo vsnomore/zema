@@ -268,3 +268,17 @@
         left: 14px;
     }
 }
+
+@media (max-width: 768px) {
+    .marketplaces {
+        padding: 32px 0;
+    }
+
+    .marketplaces__title {
+        font-size: 32px;
+    }
+
+    .marketplaces__logos {
+        margin-top: 24px;
+    }
+}
