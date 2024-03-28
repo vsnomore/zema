@@ -14,7 +14,7 @@
 }
 
 .anim__shift-bottom {
-	transform: translateY(200px);
+	transform: translateY(150px);
 	opacity: 0;
     transition: 1s;
 
@@ -25,7 +25,7 @@
 }
 
 .anim__shift-left {
-	transform: translateX(-200px);
+	transform: translateX(-150px);
 	opacity: 0;
     transition: 1s;
 
@@ -33,10 +33,14 @@
         transform: translateX(0);
 	    opacity: 1;
     }
+
+    @media (max-width:768px) {
+	    transform: translateX(-80px);
+    }
 }
 
 .anim__shift-right {
-	transform: translateX(200px);
+	transform: translateX(150px);
 	opacity: 0;
     transition: 1s;
 

@@ -142,15 +142,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // });
 
     // form modal
-    const modalBtn = document.querySelector('.modal__form-button');
-    const modalWrapper1 = document.querySelector('.modal__wrapper-1');
-    const thanksMessage = document.querySelector('.modal__wrapper-2');
+    // const modalBtn = document.querySelector('.modal__form-button');
+    // const modalWrapper1 = document.querySelector('.modal__wrapper-1');
+    // const thanksMessage = document.querySelector('.modal__wrapper-2');
 
-    modalBtn.addEventListener('click', event => {
-        event.preventDefault();
-        modalWrapper1.style.display = 'none';
-        thanksMessage.style.display = 'block';
-    });
+    // modalBtn.addEventListener('click', event => {
+    //     event.preventDefault();
+    //     modalWrapper1.style.display = 'none';
+    //     thanksMessage.style.display = 'block';
+    // });
 
     //marketplaces tabs
     const headlines = document.querySelectorAll('.marketplaces__grid-item');
@@ -205,7 +205,7 @@ function animation() {
         });
     }
   
-    let options = { threshold: [0.8] };
+    let options = { threshold: [0.4] };
     let observer = new IntersectionObserver(onEntry, options);
   
     animatedItems.forEach(el => {
@@ -225,7 +225,7 @@ function gridAnimation() {
         });
     }
   
-    let options = { threshold: [0.8] };
+    let options = { threshold: [0.5] };
     let observer = new IntersectionObserver(onEntry, options);
   
     observer.observe(animatedItem);
@@ -243,17 +243,16 @@ function validForm() {
   
     function validation(parentForm) {
       const form = parentForm,
-            formButton = form.querySelector('[data-js="form-submit"]'),
             formInputs = form.querySelectorAll('input:not([type="submit"])');
   
-      formButton.addEventListener('click', e => {
-        // e.preventDefault();
+      form.addEventListener('submit', e => {
         statusForSendingData = true;
   
         formInputs.forEach(el => {
             if (el.name == 'email' && !validateEmail(el.value)) {
             el.labels[0].classList.add('incorrect');
             statusForSendingData = false;
+            el.placeholder = "Поле обязательное*";
             }
 
           if (el.name == 'name' && !el.value) {
@@ -262,20 +261,31 @@ function validForm() {
             el.placeholder = "Поле обязательное*";
           }
   
-          if (el.name == 'phone' && !el.value) {
-            el.labels[0].classList.add('incorrect');
-            statusForSendingData = false;
-            el.placeholder = "Поле обязательное*";
+          if (el.name == 'phone') {
+            if(el.value.toString().length < 8 || isNaN(el.value)) {
+                el.labels[0].classList.add('incorrect');
+                statusForSendingData = false;
+                el.placeholder = "Поле обязательное*";
+            }
           }
         });
-  
-        if (statusForSendingData) {
-            const successMessage = document.querySelector('.buyer__wrapper-2');
-            const wrapper1 = document.querySelector('.buyer__wrapper-1');
 
-            successMessage.style.display = 'block';
-            form.style.display = 'flex';
-            wrapper1.style.display = 'none';
+        if (statusForSendingData) {
+            e.preventDefault();
+            if(e.currentTarget.id == "form-buyer") {
+                const successMessage = document.querySelector('.buyer__wrapper-2');
+                const wrapper1 = document.querySelector('.buyer__wrapper-1');
+    
+                successMessage.style.display = 'block';
+                form.style.display = 'flex';
+                wrapper1.style.display = 'none';
+            } else if (e.currentTarget.id == "form-modal") {
+                const modalWrapper1 = document.querySelector('.modal__wrapper-1');
+                const thanksMessage = document.querySelector('.modal__wrapper-2');
+            
+                modalWrapper1.style.display = 'none';
+                thanksMessage.style.display = 'block';
+            }
         } else {
             e.preventDefault();
         }

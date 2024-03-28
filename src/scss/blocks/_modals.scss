@@ -89,6 +89,16 @@
                     border-bottom: 1px solid #EBCA00;
                 }
             }
+
+            &.incorrect {
+                input {
+                    border-color: red;
+                }
+
+                input::placeholder {
+                    color: red;
+                }
+            }
         }
 
         &-checkboxes {
