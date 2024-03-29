@@ -54,6 +54,7 @@
     }
 
     &__form {
+        display: grid;
         width: 648px;
         min-height: 575px;
         padding: 24px;
@@ -209,6 +210,8 @@
         // display: flex;
     }
 
+
+
     &__thanks {
         width: 600px;
 
@@ -321,5 +324,38 @@
         height: 48px;
         font-size: 20px;
         line-height: 24px;
+    }
+
+    .buyer__thanks-title {
+        font-size: 32px;
+        line-height: 36px;
+    }
+
+    .buyer__thanks-text {
+        gap: 12px;
+    }
+
+    .buyer__thanks-text p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .buyer__thanks-button {
+        margin-top: 24px;
+        height: 48px;
+        font-size: 18px;
+        line-height: 22px;
+        gap: 8px;
+    }
+
+    .buyer__thanks-button-tg {
+        width: 19px;
+        height: 14px;
+    }
+}
+
+@media (max-width: 446px) {
+    .buyer__thanks-button-tg {
+        display: none;
     }
 }
