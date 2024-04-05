@@ -210,11 +210,11 @@ function validForm() {
                     el.placeholder = "Обязательное поле*";
                 }
 
-                if (el.name == 'name' && !el.value) {
-                    el.labels[0].classList.add('incorrect');
-                    statusForSendingData = false;
-                    el.placeholder = "Обязательное поле*";
-                }
+                // if (el.name == 'name' && !el.value) {
+                //     el.labels[0].classList.add('incorrect');
+                //     statusForSendingData = false;
+                //     el.placeholder = "Обязательное поле*";
+                // }
 
                 if (el.name == 'phone') {
                     if (el.value.toString().length < 8 || isNaN(el.value)) {

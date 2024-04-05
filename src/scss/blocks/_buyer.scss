@@ -83,6 +83,7 @@
         }
 
         &-field {
+            position: relative;
             display: flex;
             flex-direction: column;
 
@@ -136,6 +137,28 @@
             input:-webkit-autofill:active {
                 transition: background-color 5000s;
                 -webkit-text-fill-color: #E3E3E3 !important;
+            }
+        }
+
+        &-phone-incorrect {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            padding: 4px 10px;
+            font-weight: 700;
+
+            background-color: #EBCA00;
+            border-radius: 8px;
+            color: #000;
+
+            opacity: 0;
+            transform: translateY(-50px);
+            transition: .7s;
+
+            .buyer__form-field.incorrect & {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
@@ -329,6 +352,11 @@
         flex-wrap: wrap;
     }
 
+    .buyer__form-phone-incorrect {
+        max-width: 260px;
+        top: -12px;
+    }
+
     .buyer__form-checkboxes label {
         gap: 6px;
         font-size: 14px;
@@ -372,5 +400,18 @@
 @media (max-width: 446px) {
     .buyer__thanks-button-tg {
         display: none;
+    }
+
+    .buyer__thanks-button-tg {
+        display: none;
+    }
+
+    .buyer__form-phone-incorrect {
+        padding: 2px 6px;
+        font-size: 14px;
+        line-height: 1;
+        max-width: 160px;
+        right: -20px;
+        top: -14px;
     }
 }
