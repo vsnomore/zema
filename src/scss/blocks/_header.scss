@@ -27,11 +27,25 @@
             align-items: center;
             gap: 24px;
 
-            a {
-                font-weight: 600;
-                font-size: 18px;
-                color: #fff;
+            li {
+
+                transition: 0.5s all;
+
+                a {
+                    font-weight: 600;
+                    font-size: 18px;
+                    color: #fff;
+
+                    &:hover {
+                        text-decoration: underline;
+                        text-underline-offset: 4px;
+                        text-decoration-skip-ink: none;
+                        color: #fff;
+                    }
+                }
             }
+
+
         }
     }
 
@@ -44,10 +58,18 @@
     &__number {
         font-weight: 500;
         font-size: 22px;
-        background: linear-gradient(90deg, #eb8300 0%, rgba(235, 202, 0, 0.38) 100%);
+        background: linear-gradient(90.00deg, rgb(235, 132, 0),rgba(235, 202, 0, 0.38));
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        transition: 0.5s all;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.4) linear-gradient(90.00deg, rgb(235, 132, 0, 0.6),rgba(235, 202, 0, 0.38));;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     }
 
     &__wa {
@@ -55,8 +77,17 @@
         width: 32px;
 
         svg {
+            fill: #E3E3E3;
             height: 32px;
             width: 32px;
+
+            use {
+                transition: 0.5s all;
+            }
+
+            &:hover * {
+                fill: rgb(235, 202, 0);;
+            }
         }
     }
 }
@@ -129,20 +160,23 @@
 @media (max-width: 1200px) {
 
     .header {
-    
+
         &__logo {
             width: 150px;
             display: flex;
             align-items: center;
         }
-    
+
         &__navigation {
             ul {
                 gap: 12px;
-    
-                a {
-                    font-size: 16px;
+
+                li {
+                    a {
+                        font-size: 16px;
+                    }
                 }
+
             }
         }
     }

@@ -56,7 +56,6 @@
     &-list {
 
         &__item {
-            margin-top: 12px;
 
             &-title {
                 font-size: 28px;
@@ -67,8 +66,10 @@
                 grid-template-columns: 1fr 50px;
                 align-items: center;
                 cursor: pointer;
+                padding: 12px 0;
 
                 svg {
+
                     width: 100%;
                     height: 100%;
                     transition: .3s;
@@ -77,45 +78,46 @@
 
             &-toggler {
                 justify-self: flex-end;
-                width: 48px;
-                height: 48px;
+                width: 35px;
+                height: 29px;
             }
 
-            &:hover .faq-list__item-toggler svg {
-                transform: rotate(45deg);
-            }
+            // &:hover .faq-list__item-toggler svg {
+            //     transform: rotate(-45deg);
+            // }
 
             &-active {
-                .faq-list__item-toggler {
-                    position: relative;
-
-                    &:before,
-                    &:after {
-                        display: block;
-                        content: "";
-                        position: absolute;
-                        width: 50px;
-                        height: 2px;
-                        top: 20px;
-                        right: 0;
-                        background-color: #362A2A;
-                    }
-
-                    &:before {
-                        transform: rotate(45deg);
-                    }
-
-                    &::after {
-                        transform: rotate(-45deg);
-                    }
-                }
 
                 .faq-list__item-toggler svg {
-                    display: none;
+                    transform: rotate(-45deg);
                 }
 
-                // span {
-                //     color: #EBCA00;
+                // .faq-list__item-toggler {
+                //     position: relative;
+
+                //     &:before,
+                //     &:after {
+                //         display: block;
+                //         content: "";
+                //         position: absolute;
+                //         width: 50px;
+                //         height: 2px;
+                //         top: 20px;
+                //         right: 0;
+                //         background-color: #362A2A;
+                //     }
+
+                //     &:before {
+                //         transform: rotate(45deg);
+                //     }
+
+                //     &::after {
+                //         transform: rotate(-45deg);
+                //     }
+                // }
+
+                // .faq-list__item-toggler svg {
+                //     display: none;
                 // }
             }
 
@@ -129,15 +131,16 @@
                 transition: .7s;
             }
 
-            .faq-list__item-content.content-active+.services-list__item-divider {
-                margin-top: 20px;
-            }
+            // .faq-list__item-content.content-active+.services-list__item-divider {
+            //     margin-top: 20px;
+            // }
 
             &-description {
-                font-size: 14px;
+                font-size: 16px;
                 font-weight: 400;
                 line-height: 16px;
                 color: #362A2A;
+                margin-bottom: 12px;
             }
 
             &-divider {
@@ -145,7 +148,6 @@
                 width: 100%;
                 background-color: #362A2A;
                 height: 1px;
-                margin-top: 12px;
             }
         }
     }
@@ -179,5 +181,9 @@
     .faq-list__item-title {
         font-size: 16px;
         line-height: 20px;
+    }
+
+    .faq-list__item-description {
+        font-size: 14px;
     }
 }

@@ -43,10 +43,14 @@
         display: inline-block;
         border-radius: 8px;
         padding: 24px 48px;
-        background: linear-gradient(90deg, #ebca00 0%, #ebca00 100%);
+        background: linear-gradient(90.00deg, rgb(235, 202, 0),rgba(235, 202, 0, 0.38) 149.371%);
         font-weight: 700;
         font-size: 28px;
         color: #000;
+
+        &:hover {
+            background: linear-gradient(90.00deg, rgb(235, 202, 0),rgba(235, 202, 0) 149.371%);
+        }
     }
 
     &__categories {

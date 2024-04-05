@@ -122,14 +122,20 @@
         }
 
         &-phone {
-            background: linear-gradient(90.00deg, rgb(235, 202, 0), rgba(235, 202, 0, 0.38));
+            background: linear-gradient(90.00deg, rgb(235, 132, 0),rgba(235, 202, 0, 0.38));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-fill-color: transparent;
             font-size: 14px;
             font-weight: 400;
             line-height: 16px;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.4) linear-gradient(90.00deg, rgb(235, 132, 0, 0.6),rgba(235, 202, 0, 0.38));;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
         }
     }
 
@@ -139,8 +145,17 @@
         gap: 24px;
 
         svg {
+            fill: #E3E3E3;
             width: 36px;
             height: 36px;
+
+            use {
+                transition: 0.5s all;
+            }
+
+            &:hover * {
+                fill: rgb(235, 202, 0);;
+            }
         }
     }
 
@@ -229,6 +244,10 @@
         grid-column-start: 1;
         grid-column-end: 4;
         justify-content: center;
+    }
+
+    .footer__tie {
+        display: none;
     }
 }
 

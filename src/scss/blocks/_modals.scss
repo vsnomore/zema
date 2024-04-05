@@ -5,7 +5,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.56);
-    z-index: 50;
+    z-index: 90;
     animation: fadeIn .5s linear;
 }
 
@@ -18,7 +18,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(18, 17, 16, 0.96);
-    z-index: 51;
+    z-index: 91;
     animation: fadeIn .5s linear;
     border-radius: 8px;
     box-shadow: 5px 6px 36px 0px rgba(255, 255, 255, 0.25);
@@ -90,6 +90,14 @@
                 }
             }
 
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover,
+            input:-webkit-autofill:focus,
+            input:-webkit-autofill:active {
+                transition: background-color 5000s;
+                -webkit-text-fill-color: #E3E3E3 !important;
+            }
+
             &.incorrect {
                 input {
                     border-color: red;
@@ -123,12 +131,16 @@
             height: 24px;
             color: #E3E3E3;
             background: #fff;
-            border: 1.68px solid rgb(227, 227, 227);
-            border-radius: 2.24px;
+            border: 3px solid rgb(227, 227, 227);
+            border-radius: 4px;
             appearance: none;
             outline: 0;
             cursor: pointer;
             transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+
+            &:hover {
+                border-color: rgb(235, 202, 0);
+            }
 
             &::before {
                 position: absolute;
@@ -144,7 +156,6 @@
 
             &:checked {
                 color: #fff;
-                border-radius: 1.12px;
                 border-color: rgb(235, 202, 0);
                 background: rgb(235, 202, 0);
 
@@ -166,6 +177,10 @@
             border-radius: 8px;
             background: rgb(235, 202, 0);
             cursor: pointer;
+
+            &:hover {
+                background: linear-gradient(90.00deg, rgb(235, 202, 0),rgba(235, 202, 0, 0.38) 149.371%), #fff;
+            }
         }
     }
 
@@ -227,6 +242,11 @@ form {
 
 .show {
     display: block;
+}
+
+#price-catalog > div.modal__wrapper-2 > a:hover,
+#price-catalog button:hover {
+    background: linear-gradient(90.00deg, rgb(235, 202, 0),rgba(235, 202, 0, 0.38) 149.371%), #fff;
 }
 
 @media (max-width: 768px) {

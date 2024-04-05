@@ -93,6 +93,10 @@
     .delivery__grid {
         gap: 16px;
     }
+
+    .delivery .container .delivery__tie {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {

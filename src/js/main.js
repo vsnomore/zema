@@ -48,12 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (window.innerWidth > 992) {
                         const maxHeigth = Math.max(window.getComputedStyle(contentBlocks[ind].querySelector('.faq-list__item-description')).height.slice(0, -2));
                         contentBlocks[ind].style.height = `${maxHeigth + 16}px`;
-                        contentBlocks[ind].style.paddingTop = `10px`;
+                        // contentBlocks[ind].style.paddingTop = `10px`;
                     } else {
                         const sumHeigth = +window.getComputedStyle(contentBlocks[ind].querySelector('.faq-list__item-description')).height.slice(0, -2);
                         console.log(sumHeigth);
                         contentBlocks[ind].style.height = `${sumHeigth + 16}px`;
-                        contentBlocks[ind].style.paddingTop = `10px`;
+                        // contentBlocks[ind].style.paddingTop = `10px`;
                     }
 
                     contentBlocks[ind].classList.add('content-active');
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     contentBlocks[ind].classList.remove('content-active');
                     contentBlocks[ind].style.height = `0px`;
-                    contentBlocks[ind].style.paddingTop = `0`;
+                    // contentBlocks[ind].style.paddingTop = `0`;
 
                     el.classList.remove('faq-list__item-active')
                 }
@@ -173,29 +173,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function gallery(wrapperItem, transition) {
     const wrapper = document.querySelector(wrapperItem);
-  
+
     shift();
-    
+
     function shift() {
         const firstItem = wrapper.querySelector('.promo__collage-column');
-    
+
         const itemHeight = window.getComputedStyle(firstItem).height.slice(0, -2);
         const gap = window.getComputedStyle(wrapper).gap.slice(0, -2);
         wrapper.style.top = `-${+itemHeight + +gap}px`;
         wrapper.style.transition = `all ${transition}ms linear`;
-  
+
         setTimeout(() => {
             firstItem.remove();
             wrapper.append(firstItem);
             wrapper.style.transition = `unset`;
             wrapper.style.top = `0px`;
-    
+
             shift();
         }, transition);
     }
 }
 
-function animation() {  
+function animation() {
     const animatedItems = document.querySelectorAll('[data-js="animated-item"]');
     function onEntry(entry) {
         entry.forEach(change => {
@@ -204,10 +204,10 @@ function animation() {
             }
         });
     }
-  
+
     let options = { threshold: [0.4] };
     let observer = new IntersectionObserver(onEntry, options);
-  
+
     animatedItems.forEach(el => {
         observer.observe(el);
     });
@@ -220,78 +220,78 @@ function gridAnimation() {
             if (change.isIntersecting) {
                 setTimeout(() => {
                     change.target.classList.add('grid-animation_done');
-                }, 1000)
+                }, 400)
             }
         });
     }
-  
+
     let options = { threshold: [0.5] };
     let observer = new IntersectionObserver(onEntry, options);
-  
+
     observer.observe(animatedItem);
 }
 
 function validForm() {
     const validateEmail = (email) => {
-            return String(email).toLowerCase().match(
+        return String(email).toLowerCase().match(
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-        };
-  
+    };
+
     document.querySelectorAll('[data-form="contact"]').forEach(el => {
         validation(el);
     });
-  
-    function validation(parentForm) {
-      const form = parentForm,
-            formInputs = form.querySelectorAll('input:not([type="submit"])');
-  
-      form.addEventListener('submit', e => {
-        statusForSendingData = true;
-  
-        formInputs.forEach(el => {
-            if (el.name == 'email' && !validateEmail(el.value)) {
-            el.labels[0].classList.add('incorrect');
-            statusForSendingData = false;
-            el.placeholder = "Обязательное поле*";
-            }
 
-          if (el.name == 'name' && !el.value) {
-            el.labels[0].classList.add('incorrect');
-            statusForSendingData = false;
-            el.placeholder = "Обязательное поле*";
-          }
-  
-          if (el.name == 'phone') {
-            if(el.value.toString().length < 8 || isNaN(el.value)) {
-                el.labels[0].classList.add('incorrect');
-                statusForSendingData = false;
-                el.placeholder = "Обязательное поле*";
+    function validation(parentForm) {
+        const form = parentForm,
+            formInputs = form.querySelectorAll('input:not([type="submit"])');
+
+        form.addEventListener('submit', e => {
+            statusForSendingData = true;
+
+            formInputs.forEach(el => {
+                if (el.name == 'email' && !validateEmail(el.value)) {
+                    el.labels[0].classList.add('incorrect');
+                    statusForSendingData = false;
+                    el.placeholder = "Обязательное поле*";
+                }
+
+                if (el.name == 'name' && !el.value) {
+                    el.labels[0].classList.add('incorrect');
+                    statusForSendingData = false;
+                    el.placeholder = "Обязательное поле*";
+                }
+
+                if (el.name == 'phone') {
+                    if (el.value.toString().length < 8 || isNaN(el.value)) {
+                        el.labels[0].classList.add('incorrect');
+                        statusForSendingData = false;
+                        el.placeholder = "Обязательное поле*";
+                    }
+                }
+            });
+
+            if (statusForSendingData) {
+                e.preventDefault();
+                if (e.currentTarget.id == "form-buyer") {
+                    const successMessage = document.querySelector('.buyer__wrapper-2');
+                    const wrapper1 = document.querySelector('.buyer__wrapper-1');
+
+                    successMessage.style.display = 'block';
+                    form.style.display = 'flex';
+                    wrapper1.style.display = 'none';
+                } else if (e.currentTarget.id == "form-modal") {
+                    const modalWrapper1 = document.querySelector('.modal__wrapper-1');
+                    const thanksMessage = document.querySelector('.modal__wrapper-2');
+
+                    modalWrapper1.style.display = 'none';
+                    thanksMessage.style.display = 'block';
+                }
+            } else {
+                e.preventDefault();
             }
-          }
         });
 
-        if (statusForSendingData) {
-            e.preventDefault();
-            if(e.currentTarget.id == "form-buyer") {
-                const successMessage = document.querySelector('.buyer__wrapper-2');
-                const wrapper1 = document.querySelector('.buyer__wrapper-1');
-    
-                successMessage.style.display = 'block';
-                form.style.display = 'flex';
-                wrapper1.style.display = 'none';
-            } else if (e.currentTarget.id == "form-modal") {
-                const modalWrapper1 = document.querySelector('.modal__wrapper-1');
-                const thanksMessage = document.querySelector('.modal__wrapper-2');
-            
-                modalWrapper1.style.display = 'none';
-                thanksMessage.style.display = 'block';
-            }
-        } else {
-            e.preventDefault();
-        }
-      });
-
-        formInputs.forEach( el => el.addEventListener('input', () => {
+        formInputs.forEach(el => el.addEventListener('input', () => {
             el.labels[0].classList.remove('incorrect');
             el.placeholder = "";
         }));
