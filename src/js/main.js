@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     acordeon();
-    gallery('.promo__collage-item:first-child', "35000");
-    gallery('.promo__collage-item:nth-child(2)', "40000");
+    gallery('.promo__collage-item:first-child', "75000");
+    gallery('.promo__collage-item:nth-child(2)', "80000");
 
     animation();
     gridAnimation();
@@ -74,40 +74,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // MODALS
     const overlay = document.querySelector('.overlay');
     const closeButtons = document.querySelectorAll('.modal__close-icon');
-    const buttons = document.querySelectorAll("*[data-modal='*']");
-    const infoBtn = document.querySelector('.info__btn');
-    const promoBtn = document.querySelector('.promo__btn');
+    const buttons = document.querySelectorAll("[data-modal='modal-form']");
     const priceCatalog = document.getElementById('price-catalog');
 
     buttons.forEach(function (item) {
         if (item.hasAttribute('data-modal')) {
             item.addEventListener('click', function (e) {
                 e.preventDefault();
-                const attr = this.getAttribute('data-modal'),
-                    modalWindow = document.getElementById(`${attr}`);
-
-                modalWindow.classList.add('show');
+                priceCatalog.classList.add('show');
                 overlay.classList.add('show');
                 document.body.style.overflow = 'hidden';
                 document.body.style.paddingRight = '8px';
             });
         }
-    });
-
-    infoBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        priceCatalog.classList.add('show');
-        overlay.classList.add('show');
-        document.body.style.overflow = 'hidden';
-        document.body.style.paddingRight = '8px';
-    });
-
-    promoBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        priceCatalog.classList.add('show');
-        overlay.classList.add('show');
-        document.body.style.overflow = 'hidden';
-        document.body.style.paddingRight = '8px';
     });
 
     closeButtons.forEach(function (item) {
@@ -127,30 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
         document.body.style.paddingRight = '';
     });
-
-    // form buyer 
-    // const formBtn = document.querySelector('.buyer__form-button');
-    // const wrapper1 = document.querySelector('.buyer__wrapper-1');
-    // const successMessage = document.querySelector('.buyer__wrapper-2');
-    // const form = document.querySelector('.buyer__form');
-
-    // formBtn.addEventListener('click', event => {
-    //     event.preventDefault();
-    //     wrapper1.style.display = 'none';
-    //     successMessage.style.display = 'block';
-    //     form.style.display = 'flex';
-    // });
-
-    // form modal
-    // const modalBtn = document.querySelector('.modal__form-button');
-    // const modalWrapper1 = document.querySelector('.modal__wrapper-1');
-    // const thanksMessage = document.querySelector('.modal__wrapper-2');
-
-    // modalBtn.addEventListener('click', event => {
-    //     event.preventDefault();
-    //     modalWrapper1.style.display = 'none';
-    //     thanksMessage.style.display = 'block';
-    // });
 
     //marketplaces tabs
     const headlines = document.querySelectorAll('.marketplaces__grid-item');
