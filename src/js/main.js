@@ -20,11 +20,19 @@ document.addEventListener('DOMContentLoaded', () => {
             mobMenu.style.left = "-100%";
             mobMenuActive = false;
             document.body.style.overflow = '';
+
+            if ((navigator.userAgentData && navigator.userAgentData.brands[0].brand == "Google Chrome") && !window.navigator.userAgentData.mobile) {
+                document.body.style.paddingRight = '0px';
+            }
         } else {
             burger.classList.add('hamburger__icon-active');
             mobMenu.style.left = 0;
             mobMenuActive = true;
             document.body.style.overflow = 'hidden';
+
+            if ((navigator.userAgentData && navigator.userAgentData.brands[0].brand == "Google Chrome") && !window.navigator.userAgentData.mobile) {
+                document.body.style.paddingRight = '8px';
+            }
         }
     });
 
@@ -84,7 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 priceCatalog.classList.add('show');
                 overlay.classList.add('show');
                 document.body.style.overflow = 'hidden';
-                document.body.style.paddingRight = '8px';
+
+
+                if ((navigator.userAgentData && navigator.userAgentData.brands[0].brand == "Google Chrome") && !window.navigator.userAgentData.mobile) {
+                    document.body.style.paddingRight = '8px';
+                }
             });
         }
     });
